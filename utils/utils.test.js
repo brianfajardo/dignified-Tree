@@ -14,6 +14,6 @@ it('should square a number', () => {
     const res = utils.square(5);
 
     if (res !== 25) {
-        throw new Error(`Expected: 25, but got ${res}`)
+        throw new Error(`Expected: 25, but got ${res}.`)
     };
 })
