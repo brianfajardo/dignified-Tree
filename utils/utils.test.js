@@ -33,15 +33,21 @@ it('should split full name into user.firstName and user.lastName', () => {
         })
 });
 
-// it('should expect a value', () => {
-//     // expect(1).toNotBe(2)
-//     // expect({color: 'orange'}).toNotEqual({color: 'red'})
-//     // expect([1,2,3]).toInclude(2)
-//     // expect([1,2,3]).toExclude(4)
-//     // expect({
-//     //     name:'Brian',
-//     //     location:'Canada',
-//     //     season: 'spring'
-//     // }).toInclude({
-//     //     location:'Canada'
-// })
+// passing 'done' tells Mocha that the test is not done yet (ie. setTimeout example)
+it('should async add two numbers after 1 second', (done) => {
+    utils.asyncAdd(2, 3, (sum) => {
+        expect(sum)
+            .toBe(5)
+            .toBeA('number');
+        done() /* tells Mocha test is done and can process result for pass/fail */
+    })
+});
+
+it('should async square two numbers after 1 second', (done) => {
+    utils.asyncSquare(10, (squared) => {
+        expect(squared)
+            .toBe(100)
+            .toBeA('number');
+        done()
+    })
+});

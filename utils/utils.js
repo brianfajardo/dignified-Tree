@@ -1,6 +1,18 @@
 const add = (a, b) => a + b;
 
+const asyncAdd = (a, b, callback) => {
+    setTimeout(() => {
+        callback(a + b)
+    }, 1000)
+}
+
 const square = (x) => x * x;
+
+const asyncSquare = (x, callback) => {
+    setTimeout(() => {
+        callback(x * x)
+    }, 1000)
+}
 
 const setName = (userObj, fullName) => {
     const names = fullName.split(' ');
@@ -12,5 +24,7 @@ const setName = (userObj, fullName) => {
 module.exports = {
     add,
     square,
-    setName
+    setName,
+    asyncAdd,
+    asyncSquare
 }

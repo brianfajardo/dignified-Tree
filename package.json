@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*.test.js",
-    "test-live-update": "nodemon --exec \"npm test\""
+    "test-live": "nodemon --exec \"npm test\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "expect": "^1.20.2",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
   }
 }
